@@ -5,11 +5,10 @@
 N,K = map(int,input().split())
 result = K-1
 if N < sum(range(K+1)):
-    result = -1
+    print(-1)
 else:
     N -= sum(range(K+1))
-    while N >= K:
-        N -= K
-    if N > 0:
-        result +=1
-print(result)
+    if N % K == 0:
+        print(result)
+    else:
+        print(result+1)
